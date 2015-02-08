@@ -63,6 +63,31 @@ BinarySearchTree.prototype.depthFirstLog = function(cb){
   }
 
 };
+BinarySearchTree.prototype.breadthFirstLog = function(target, left, right){
+  //Visit level by level. Starting with the root value
+  //We will work on both left and right at the same time.
+  //***Pseduo code
+  //
+  //Queue the node(s)
+  var queue = Queue();
+  var node;
+  queue.enqueue(this);
+  //while(queue ! empty)
+  while(!queue.size){
+    node =  queue.();
+
+  }
+  // if node value equals target
+  //  return true
+  // assign node to a value
+  // pop the node out
+  // if node child is not undefine
+  //  push the in node child
+  //
+
+
+
+};
 
 /*
  * Complexity: What is the time complexity of the above functions?
