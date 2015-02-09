@@ -4,15 +4,15 @@ var Queue = function(){
   // Use an object with numeric keys to store values
   var storage = {};
   var size = 0;
-  var lastIndex = 0, firstIndex = 0;
+  var lastIndex = -1, firstIndex = -1;
   // Implement the methods below
   // Psuedo Code
   //
   someInstance.enqueue = function(value){
     //Add value to the end of 'storage'
-    size++;
-    storage[lastIndex] = value;
     lastIndex++;
+    storage[lastIndex] = value;
+  
 
     //Move the lastIndex to last value
     //size have to increase.
@@ -20,13 +20,11 @@ var Queue = function(){
 
   someInstance.dequeue = function(){
     //Removes value from the front
-    size && size--;
+    this.size() && firstIndex++;
     var removedVal = storage[firstIndex];
     //console.log(removedVal);
     delete storage[firstIndex];
     //console.log(firstIndex);
-
-    firstIndex++;
     //Changes firstIndex following value key
     //size decrease
     //Assigns the removed value to a variable and returns it.
@@ -34,7 +32,7 @@ var Queue = function(){
   };
 
   someInstance.size = function(){
-    return size;
+    return lastIndex - firstIndex;
   };
 
   return someInstance;
